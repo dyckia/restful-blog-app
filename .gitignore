@@ -1,0 +1,4 @@
+.configure/
+
+# OS related files
+.DS_Store
