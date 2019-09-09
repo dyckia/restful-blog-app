@@ -2,12 +2,15 @@ const express = require("express");
 const app = express();
 const keys = require("./.configure/keys.js");
 const mongoose = require("mongoose");
+const bodyParser = require("body-parser");
 
 // mongoose setup
 mongoose.connect(keys.mongoUrl, {useNewUrlParser: true, useUnifiedTopology: true});
 
 // app config
 app.set("view engine", "ejs");
+app.use(express.static("public"));
+app.use(bodyParser.urlencoded({extended: true}));
 
 // blog model
 const blogSchema = new mongoose.Schema({
@@ -32,6 +35,21 @@ app.get("/blogs", (req, res) => {
 			res.render("index", {blogs: blogs});
 		}
 	});
+});
+
+app.post("/blogs", (req, res) => {
+    Blog.create(req.body.blog, (err, blog) => {
+        if (err) {
+            console.log(err);
+        } else {
+            res.redirect("/blogs");
+        }
+    });
+
+});
+
+app.get("/blogs/new", (req, res) => {
+    res.render("new");
 });
 
 app.listen(3000, () => {

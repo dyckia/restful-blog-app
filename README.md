@@ -7,9 +7,9 @@ This is a RESTful blog app.
 - [x] connect to MongoDB Atlas
 - [x] create blog model
 - [x] create INDEX route
-- [ ] add header and footer partials
-- [ ] import Sematic UI
-- [ ] add nav bar
-- [ ] create NEW route
-- [ ] create CREATE route
-- [ ] stylize new view
+- [x] add header and footer partials
+- [x] import Sematic UI
+- [x] add nav bar
+- [x] create NEW route
+- [x] create CREATE route
+- [x] stylize new view
