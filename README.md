@@ -5,4 +5,5 @@ This is a RESTful blog app.
 ### v0.1
 - [x] setup the npm environment
 - [x] connect to MongoDB Atlas
-- [ ] create blog model 
+- [x] create blog model
+- [ ] create index view
