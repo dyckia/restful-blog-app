@@ -26,4 +26,4 @@ This is a RESTful blog app.
 
 ### v0.3
 - [x] sanitize the blog content
-- [ ] style index view
+- [x] style index view
