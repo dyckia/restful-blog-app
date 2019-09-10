@@ -23,10 +23,12 @@ const blogSchema = new mongoose.Schema({
 const Blog = mongoose.model("blog", blogSchema);
 
 // RESTful routes
+// root route
 app.get("/", (req, res) => {
 	res.redirect("/blogs");
 });
 
+// INDEX route
 app.get("/blogs", (req, res) => {
 	Blog.find({}, (err, blogs) => {
 		if (err) {
@@ -37,6 +39,7 @@ app.get("/blogs", (req, res) => {
 	});
 });
 
+// CREATE route
 app.post("/blogs", (req, res) => {
     Blog.create(req.body.blog, (err, blog) => {
         if (err) {
@@ -45,11 +48,23 @@ app.post("/blogs", (req, res) => {
             res.redirect("/blogs");
         }
     });
-
 });
 
+// NEW route
 app.get("/blogs/new", (req, res) => {
     res.render("new");
+});
+
+// SHOW route
+app.get("/blogs/:id", (req, res) => {
+	const blogId = req.params.id;
+	Blog.findById(blogId, (err, foundBlog) => {
+		if (err) {
+			console.log(err);
+		} else {
+			res.render("show", {blog: foundBlog});
+		}
+	});
 });
 
 app.listen(3000, () => {

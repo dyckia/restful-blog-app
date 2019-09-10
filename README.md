@@ -5,13 +5,16 @@ This is a RESTful blog app.
 ### v0.1
 - [x] setup the npm environment
 - [x] connect to MongoDB Atlas
-- [x] create blog model
-- [x] create INDEX route
+- [x] add blog model
+- [x] add INDEX route
 - [x] add header and footer partials
 - [x] import Sematic UI
 - [x] add nav bar
-- [x] create NEW route
-- [x] create CREATE route
+- [x] add NEW route
+- [x] add CREATE route
 - [x] stylize NEW view
-- [ ] create SHOW route
-- [ ] stylize SHOW view
+- [x] add SHOW route
+- [x] stylize SHOW view
+- [ ] add EDIT route
+- [ ] add EDIT view
+- [ ] add UPDATE route
