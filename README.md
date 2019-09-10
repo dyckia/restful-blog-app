@@ -21,5 +21,5 @@ This is a RESTful blog app.
 - [x] add EDIT view
 - [x] import method-override
 - [x] add UPDATE route
-- [ ] add DELETE route
-- [ ] add delte and edit button
+- [x] add DELETE route
+- [x] add delte and edit button
