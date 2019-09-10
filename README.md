@@ -12,4 +12,6 @@ This is a RESTful blog app.
 - [x] add nav bar
 - [x] create NEW route
 - [x] create CREATE route
-- [x] stylize new view
+- [x] stylize NEW view
+- [ ] create SHOW route
+- [ ] stylize SHOW view
