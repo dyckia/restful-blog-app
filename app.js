@@ -3,6 +3,7 @@ const app = express();
 const keys = require("./.configure/keys.js");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const methodOverride = require("method-override");
 
 // mongoose setup
 mongoose.connect(keys.mongoUrl, {useNewUrlParser: true, useUnifiedTopology: true});
@@ -11,6 +12,7 @@ mongoose.connect(keys.mongoUrl, {useNewUrlParser: true, useUnifiedTopology: true
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(methodOverride("_method"));
 
 // blog model
 const blogSchema = new mongoose.Schema({
@@ -57,8 +59,7 @@ app.get("/blogs/new", (req, res) => {
 
 // SHOW route
 app.get("/blogs/:id", (req, res) => {
-	const blogId = req.params.id;
-	Blog.findById(blogId, (err, foundBlog) => {
+	Blog.findById(req.params.id, (err, foundBlog) => {
 		if (err) {
 			console.log(err);
 		} else {
@@ -66,6 +67,30 @@ app.get("/blogs/:id", (req, res) => {
 		}
 	});
 });
+
+// EDIT route
+app.get("/blogs/:id/edit", (req, res) => {
+	Blog.findById(req.params.id, (err, foundBlog) => {
+		if (err) {
+			console.log(err);
+		} else {
+			res.render("edit", {blog: foundBlog});
+		}
+	});
+});
+
+// UPDATE route
+app.put("/blogs/:id", (req, res) => {
+	Blog.findByIdAndUpdate(req.params.id, req.body.blog, (err, updatedBlog) => {
+		if (err) {
+			console.log(err);
+		} else {
+			res.redirect("/blogs/" + req.params.id);
+		}
+	})
+});
+
+// DELETE route
 
 app.listen(3000, () => {
 	console.log("server is listening on port 3000");

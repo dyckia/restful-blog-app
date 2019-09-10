@@ -10,11 +10,16 @@ This is a RESTful blog app.
 - [x] add header and footer partials
 - [x] import Sematic UI
 - [x] add nav bar
+
+### v0.2
 - [x] add NEW route
 - [x] add CREATE route
 - [x] stylize NEW view
 - [x] add SHOW route
 - [x] stylize SHOW view
-- [ ] add EDIT route
-- [ ] add EDIT view
-- [ ] add UPDATE route
+- [x] add EDIT route
+- [x] add EDIT view
+- [x] import method-override
+- [x] add UPDATE route
+- [ ] add DELETE route
+- [ ] add delte and edit button
