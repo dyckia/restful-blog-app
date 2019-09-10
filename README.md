@@ -14,12 +14,16 @@ This is a RESTful blog app.
 ### v0.2
 - [x] add NEW route
 - [x] add CREATE route
-- [x] stylize NEW view
+- [x] style NEW view
 - [x] add SHOW route
-- [x] stylize SHOW view
+- [x] style SHOW view
 - [x] add EDIT route
 - [x] add EDIT view
 - [x] import method-override
 - [x] add UPDATE route
 - [x] add DELETE route
 - [x] add delte and edit button
+
+### v0.3
+- [x] sanitize the blog content
+- [ ] style index view
